@@ -5,37 +5,37 @@ using namespace std;
 using namespace std::chrono;
 
 // First solution using hashmap and set
-class Solution {
-public:
-    bool closeStrings(string word1, string word2) {
-        if(word1.length() != word2.length()) return false;
+// class Solution {
+// public:
+//     bool closeStrings(string word1, string word2) {
+//         if(word1.length() != word2.length()) return false;
         
-        map<char, int> count_1, count_2;
-        set<char> chars_1, chars_2;
+//         map<char, int> count_1, count_2;
+//         set<char> chars_1, chars_2;
 
-        for(char ch : word1) {
-            count_1[ch]++;
-            chars_1.insert(ch);
-        }
+//         for(char ch : word1) {
+//             count_1[ch]++;
+//             chars_1.insert(ch);
+//         }
         
-        for(char ch : word2) {
-            count_2[ch]++;
-            chars_2.insert(ch);
-        }
+//         for(char ch : word2) {
+//             count_2[ch]++;
+//             chars_2.insert(ch);
+//         }
 
-        if(chars_1 != chars_2) return false;
+//         if(chars_1 != chars_2) return false;
 
-        map<int, int> w1, w2;
-        for(pair<char, int> el : count_1) w1[el.second]++;
+//         map<int, int> w1, w2;
+//         for(pair<char, int> el : count_1) w1[el.second]++;
         
-        for(pair<char, int> el : count_2) w2[el.second]++;
+//         for(pair<char, int> el : count_2) w2[el.second]++;
 
-        for(auto el : w1) {
-            if(el.second != w2[el.first]) return false;
-        }
-        return true;
-    }
-};
+//         for(auto el : w1) {
+//             if(el.second != w2[el.first]) return false;
+//         }
+//         return true;
+//     }
+// };
 
 
 // Optimized solution using only freq vector
